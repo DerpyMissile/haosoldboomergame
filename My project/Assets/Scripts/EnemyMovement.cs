@@ -9,54 +9,63 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] GameObject myearghBoi; 
     public GameObject[] enemiesD;
     public GameObject[] enemiesM;
-    float secondsTillSpawn = 5;
+    float secondsTillSpawn = 1;
+    int howManySpawn = 1;
+
+    IEnumerator SpawnEnemyCountdown(){
+        yield return new WaitForSeconds(10);
+        if(secondsTillSpawn == 1){
+            howManySpawn++;
+        }else{
+            secondsTillSpawn -= 0.5f;
+        }
+        StartCoroutine(SpawnEnemyCountdown());
+    }
 
     IEnumerator SpawnEnemy(){
         yield return new WaitForSeconds(1);
         Vector3 enemyPosNew = new Vector3(0, 1, 0);
         GameObject whatEnemy;
-        if(Random.Range(0.0f, 10.0f) <= 2.0f){
-            whatEnemy = dwayneBoi;
-            if(Random.Range(0.0f, 10.0f) <= 5.0f){
-                enemyPosNew = new Vector3(-12, 1, 0);
-                whatEnemy.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
+        for(int i=0; i<howManySpawn; ++i){
+            int randomY = (int)Mathf.Floor(Random.Range(0.0f, 4.0f));
+            if(Random.Range(0.0f, 10.0f) <= 2.0f){
+                whatEnemy = dwayneBoi;
+                if(Random.Range(0.0f, 10.0f) <= 5.0f){
+                    enemyPosNew = new Vector3(-12, randomY, 0);
+                }else{
+                    enemyPosNew = new Vector3(12, randomY, 0);
+                }
+            }else if(Random.Range(0.0f, 10.0f) <= 4.0f){
+                whatEnemy = dwayneBoi;
+                if(Random.Range(0.0f, 10.0f) <= 5.0f){
+                    enemyPosNew = new Vector3(-12, randomY, 0);
+                }else{
+                    enemyPosNew = new Vector3(12, randomY, 0);
+                }
+            }else if(Random.Range(0.0f, 10.0f) <= 6.0f){
+                whatEnemy = myearghBoi;
+                if(Random.Range(0.0f, 10.0f) <= 5.0f){
+                    enemyPosNew = new Vector3(-12, randomY, 0);
+                }else{
+                    enemyPosNew = new Vector3(12, randomY, 0);
+                }
+            }else if(Random.Range(0.0f, 10.0f) <= 8.0f){
+                whatEnemy = myearghBoi;
+                if(Random.Range(0.0f, 10.0f) <= 5.0f){
+                    enemyPosNew = new Vector3(-12, randomY, 0);
+                }else{
+                    enemyPosNew = new Vector3(12, randomY, 0);
+                }
             }else{
-                enemyPosNew = new Vector3(12, 1, 0);
+                whatEnemy = dwayneBoi;
+                if(Random.Range(0.0f, 10.0f) <= 5.0f){
+                    enemyPosNew = new Vector3(-12, randomY, 0);
+                }else{
+                    enemyPosNew = new Vector3(12, randomY, 0);
+                }
             }
-        }else if(Random.Range(0.0f, 10.0f) <= 4.0f){
-            whatEnemy = dwayneBoi;
-            if(Random.Range(0.0f, 10.0f) <= 5.0f){
-                enemyPosNew = new Vector3(-12, 1, 0);
-                whatEnemy.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
-            }else{
-                enemyPosNew = new Vector3(12, 1, 0);
-            }
-        }else if(Random.Range(0.0f, 10.0f) <= 6.0f){
-            whatEnemy = myearghBoi;
-            if(Random.Range(0.0f, 10.0f) <= 5.0f){
-                enemyPosNew = new Vector3(-12, 1, 0);
-            }else{
-                enemyPosNew = new Vector3(12, 1, 0);
-                whatEnemy.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
-            }
-        }else if(Random.Range(0.0f, 10.0f) <= 8.0f){
-            whatEnemy = myearghBoi;
-            if(Random.Range(0.0f, 10.0f) <= 5.0f){
-                enemyPosNew = new Vector3(-12, 1, 0);
-            }else{
-                enemyPosNew = new Vector3(12, 1, 0);
-                whatEnemy.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
-            }
-        }else{
-            whatEnemy = dwayneBoi;
-            if(Random.Range(0.0f, 10.0f) <= 5.0f){
-                enemyPosNew = new Vector3(-12, 1, 0);
-                whatEnemy.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
-            }else{
-                enemyPosNew = new Vector3(12, 1, 0);
-            }
+            Instantiate(whatEnemy, enemyPosNew, Quaternion.identity);
         }
-        Instantiate(whatEnemy, enemyPosNew, Quaternion.identity);
         StartCoroutine(SpawnEnemy());
     }
 
@@ -83,6 +92,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Start(){
         StartCoroutine(SpawnEnemy());
+        StartCoroutine(SpawnEnemyCountdown());
     }
 
     // Update is called once per frame
