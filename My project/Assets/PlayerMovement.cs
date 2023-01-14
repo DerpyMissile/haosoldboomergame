@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private float xDir;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -14,8 +16,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        xDir = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(xDir * 7f, rb.velocity.y);
+
         if (Input.GetButtonDown("Jump")) {
-            rb.velocity = new Vector3(0, 7f, 0);
+            rb.velocity = new Vector2(rb.velocity.x, 7f);
         }
     }
 }
