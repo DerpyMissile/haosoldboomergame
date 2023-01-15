@@ -7,9 +7,10 @@ public class EnemyMovement : MonoBehaviour
     //every 5 seconds, spanwn enemy every 10 seconds lower spawn by 0.5 lowest can go is 1 and THEN after that, spawn ORE
     [SerializeField] GameObject dwayneBoi;
     [SerializeField] GameObject myearghBoi; 
+    [SerializeField] GameObject asterBoi;
     public GameObject[] enemiesD;
     public GameObject[] enemiesM;
-    float secondsTillSpawn = 1;
+    float secondsTillSpawn = 5;
     int howManySpawn = 1;
 
     IEnumerator SpawnEnemyCountdown(){
@@ -23,7 +24,7 @@ public class EnemyMovement : MonoBehaviour
     }
 
     IEnumerator SpawnEnemy(){
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(secondsTillSpawn);
         Vector3 enemyPosNew = new Vector3(0, 1, 0);
         GameObject whatEnemy;
         for(int i=0; i<howManySpawn; ++i){
@@ -38,14 +39,8 @@ public class EnemyMovement : MonoBehaviour
                     whatEnemy.GetComponent<Dwayne>().setStartingPos(true);
                 }
             }else if(Random.Range(0.0f, 10.0f) <= 4.0f){
-                whatEnemy = dwayneBoi;
-                if(Random.Range(0.0f, 10.0f) <= 5.0f){
-                    enemyPosNew = new Vector3(-12, randomY, 0);
-                    whatEnemy.GetComponent<Dwayne>().setStartingPos(false);
-                }else{
-                    enemyPosNew = new Vector3(12, randomY, 0);
-                    whatEnemy.GetComponent<Dwayne>().setStartingPos(true);
-                }
+                whatEnemy = asterBoi;
+                enemyPosNew = new Vector3(randomY, 10, 0);
             }else if(Random.Range(0.0f, 10.0f) <= 6.0f){
                 whatEnemy = myearghBoi;
                 if(Random.Range(0.0f, 10.0f) <= 5.0f){
