@@ -134,6 +134,7 @@ public class PlayerDeath : MonoBehaviour
         hearts[0].transform.position = new Vector3(-9.0f, 4.665315f, 0);
         hearts[1].transform.position = new Vector3(-8.25f, 4.665315f, 0);
         hearts[2].transform.position = new Vector3(-7.5f, 4.665315f, 0);
+        thePlayer.GetComponent<Rigidbody2D>().velocity = new Vector3(0, -1, 0);
         thePlayer.transform.position = new Vector3(0, 5.0f, 10f);
         blackScreenOfCertainDeath.SetActive(false);
         PlayerStats.dieded = false;
