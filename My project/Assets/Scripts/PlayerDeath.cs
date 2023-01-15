@@ -102,6 +102,12 @@ public class PlayerDeath : MonoBehaviour
     void prepareSecondStage(){
         stage2heart1.SetActive(true);
         stage2heart2.SetActive(true);
+        Destroy(hearts[0].GetComponent<Rigidbody2D>());
+        Destroy(hearts[1].GetComponent<Rigidbody2D>());
+        Destroy(hearts[2].GetComponent<Rigidbody2D>());
+        hearts[0].transform.position = new Vector3(-9.0f, 4.665315f, 0);
+        hearts[1].transform.position = new Vector3(-8.25f, 4.665315f, 0);
+        hearts[2].transform.position = new Vector3(-7.5f, 4.665315f, 0);
     }
 
     void OnCollisionEnter2D(Collision2D collision){

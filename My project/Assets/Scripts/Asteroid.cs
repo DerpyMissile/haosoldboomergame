@@ -12,7 +12,7 @@ public class Asteroid : MonoBehaviour
     }
 
     IEnumerator hi(){
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1);
         Destroy(gameObject);
     }
 
