@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Myearg : MonoBehaviour
 {
+    public AudioClip[] mSounds;
     bool startingFromLeft = false;
     public bool getStartingPos(){
         return startingFromLeft;
@@ -14,5 +15,11 @@ public class Myearg : MonoBehaviour
         }else{
             startingFromLeft = false;
         }
+    }
+
+    void Start(){
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = mSounds[(int)Mathf.Floor(Random.Range(0.0f, mSounds.Length-1))];
+        audio.Play();
     }
 }
