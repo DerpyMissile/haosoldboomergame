@@ -5,6 +5,8 @@ using TMPro;
 
 public class PlayerDeath : MonoBehaviour
 {
+    //heart 1 is (-9, 4.665315)
+    //heart 2 is (-8.25, )
     public Camera theCam;
     public GameObject blackScreenOfCertainDeath;
     public GameObject literallyEverythingElse;
