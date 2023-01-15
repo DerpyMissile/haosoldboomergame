@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1821772183696462917}
   - component: {fileID: 1821772183696462938}
   - component: {fileID: 5243847240460380688}
+  - component: {fileID: 2045236507430626293}
   m_Layer: 0
   m_Name: Dwayne
   m_TagString: EnemyDwayne
@@ -146,3 +147,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07684b9cc0a5474aad8fdfa884d8528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2045236507430626293
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7392041950777245099}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5075c2abfae956b44b34f3f358c406bb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
