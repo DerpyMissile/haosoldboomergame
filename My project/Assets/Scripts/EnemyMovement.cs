@@ -27,41 +27,51 @@ public class EnemyMovement : MonoBehaviour
         Vector3 enemyPosNew = new Vector3(0, 1, 0);
         GameObject whatEnemy;
         for(int i=0; i<howManySpawn; ++i){
-            int randomY = (int)Mathf.Floor(Random.Range(0.0f, 4.0f));
+            int randomY = (int)Mathf.Floor(Random.Range(0.0f, 6.0f));
             if(Random.Range(0.0f, 10.0f) <= 2.0f){
                 whatEnemy = dwayneBoi;
                 if(Random.Range(0.0f, 10.0f) <= 5.0f){
                     enemyPosNew = new Vector3(-12, randomY, 0);
+                    whatEnemy.GetComponent<Dwayne>().setStartingPos(false);
                 }else{
                     enemyPosNew = new Vector3(12, randomY, 0);
+                    whatEnemy.GetComponent<Dwayne>().setStartingPos(true);
                 }
             }else if(Random.Range(0.0f, 10.0f) <= 4.0f){
                 whatEnemy = dwayneBoi;
                 if(Random.Range(0.0f, 10.0f) <= 5.0f){
                     enemyPosNew = new Vector3(-12, randomY, 0);
+                    whatEnemy.GetComponent<Dwayne>().setStartingPos(false);
                 }else{
                     enemyPosNew = new Vector3(12, randomY, 0);
+                    whatEnemy.GetComponent<Dwayne>().setStartingPos(true);
                 }
             }else if(Random.Range(0.0f, 10.0f) <= 6.0f){
                 whatEnemy = myearghBoi;
                 if(Random.Range(0.0f, 10.0f) <= 5.0f){
                     enemyPosNew = new Vector3(-12, randomY, 0);
+                    whatEnemy.GetComponent<Myearg>().setStartingPos(false);
                 }else{
                     enemyPosNew = new Vector3(12, randomY, 0);
+                    whatEnemy.GetComponent<Myearg>().setStartingPos(true);
                 }
             }else if(Random.Range(0.0f, 10.0f) <= 8.0f){
                 whatEnemy = myearghBoi;
                 if(Random.Range(0.0f, 10.0f) <= 5.0f){
                     enemyPosNew = new Vector3(-12, randomY, 0);
+                    whatEnemy.GetComponent<Myearg>().setStartingPos(false);
                 }else{
                     enemyPosNew = new Vector3(12, randomY, 0);
+                    whatEnemy.GetComponent<Myearg>().setStartingPos(true);
                 }
             }else{
                 whatEnemy = dwayneBoi;
                 if(Random.Range(0.0f, 10.0f) <= 5.0f){
                     enemyPosNew = new Vector3(-12, randomY, 0);
+                    whatEnemy.GetComponent<Dwayne>().setStartingPos(false);
                 }else{
                     enemyPosNew = new Vector3(12, randomY, 0);
+                    whatEnemy.GetComponent<Dwayne>().setStartingPos(true);
                 }
             }
             Instantiate(whatEnemy, enemyPosNew, Quaternion.identity);
@@ -83,11 +93,19 @@ public class EnemyMovement : MonoBehaviour
     }
 
     void moveEnemyD(GameObject dwayne){
-        dwayne.GetComponent<Rigidbody2D>().AddForce(transform.right);
+        if(dwayne.GetComponent<Dwayne>().getStartingPos()){
+            dwayne.GetComponent<Rigidbody2D>().AddForce(transform.right);
+        }else{
+            dwayne.GetComponent<Rigidbody2D>().AddForce(-transform.right);
+        }
     }
 
     void moveEnemyM(GameObject mmmm){
-        mmmm.GetComponent<Rigidbody2D>().AddForce(transform.right*2);
+        if(mmmm.GetComponent<Myearg>().getStartingPos() == false){
+            mmmm.GetComponent<Rigidbody2D>().AddForce(transform.right*2);
+        }else{
+            mmmm.GetComponent<Rigidbody2D>().AddForce(transform.right*-2);
+        }
     }
 
     void Start(){
