@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4307541546932694648}
   - component: {fileID: 4307541546932694649}
   - component: {fileID: -2212455986903255933}
+  - component: {fileID: -1216718047910338392}
   m_Layer: 0
   m_Name: Myeargh
   m_TagString: EnemyMyeargh
@@ -146,3 +147,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764f49b4c5a612c49a4b9136653dc721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &-1216718047910338392
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4307541546932694652}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3f17a9c74b858cf4fb38163d78675d7d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
