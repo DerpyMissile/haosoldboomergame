@@ -12,7 +12,7 @@ public class EnemyMovement : MonoBehaviour
     public GameObject[] enemiesM;
     public AudioSource audio;
     //this
-    public AudioClip[] otherClip = { "Rock.wav" };
+    public AudioClip[] otherClip;
     float secondsTillSpawn = 2;
     int howManySpawn = 1;
 

@@ -2659,6 +2659,11 @@ MonoBehaviour:
   asterBoi: {fileID: 5862347753628114206, guid: fc485a9b8d6a88848a05db69ca1bdec8, type: 3}
   enemiesD: []
   enemiesM: []
+  audio: {fileID: 0}
+  otherClip:
+  - {fileID: 8300000, guid: c8eeb6a4819cf49d5930ded9ea541724, type: 3}
+  - {fileID: 8300000, guid: d90c2730f21f940198eebe16f040c5a1, type: 3}
+  - {fileID: 8300000, guid: 9b437cb2ad7a7436093e6898d46d80f6, type: 3}
 --- !u!4 &555191328
 Transform:
   m_ObjectHideFlags: 0
