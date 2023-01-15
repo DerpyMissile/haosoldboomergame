@@ -3289,22 +3289,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 909981595}
     - target: {fileID: 1519021306639477168, guid: de38768eb316b4011b7e61ee601e4613, type: 3}
-      propertyPath: stage2heart1
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1519021306639477168, guid: de38768eb316b4011b7e61ee601e4613, type: 3}
-      propertyPath: stage2heart2
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1519021306639477168, guid: de38768eb316b4011b7e61ee601e4613, type: 3}
-      propertyPath: stage3heart1
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1519021306639477168, guid: de38768eb316b4011b7e61ee601e4613, type: 3}
-      propertyPath: stage3heart2
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1519021306639477168, guid: de38768eb316b4011b7e61ee601e4613, type: 3}
       propertyPath: literallyEverythingElse
       value: 
       objectReference: {fileID: 1654838365}
