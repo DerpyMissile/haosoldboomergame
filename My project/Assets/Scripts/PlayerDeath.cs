@@ -14,6 +14,7 @@ public class PlayerDeath : MonoBehaviour
     public GameObject stage2heart2;
     public GameObject stage3heart1;
     public GameObject stage3heart2;
+    public GameObject stage1;
     public GameObject stage2;
     public GameObject stage3;
 
@@ -25,6 +26,7 @@ public class PlayerDeath : MonoBehaviour
         stage2heart2.SetActive(false);
         stage3heart1.SetActive(false);
         stage3heart2.SetActive(false);
+        stage2.SetActive(false);
         hearts = GameObject.FindGameObjectsWithTag("Heart");
     }
 
@@ -76,11 +78,16 @@ public class PlayerDeath : MonoBehaviour
         deadText.SetText("...INSERTED THE COIN YET? OK GOOD! GREAT, EVEN! OI'VE MODIFIED THE GAME SO EVEN *PANSIES* LIKE YOU CAN COMPLETE IT! NOW SCRAM!");
         yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return));
+        PlayerStats.nextLevel = true;
         PlayerStats.lives = 4;
         while(theCam.orthographicSize > 5){
             theCam.orthographicSize-=4;
             yield return new WaitForSeconds(1);
         }
+        stage1.SetActive(false);
+        stage2.SetActive(true);
+        PlayerStats.nextLevel = false;
+        this.transform.position = new Vector3(0, 1, 0);
         StopCoroutine(firstDeath());
         prepareSecondStage();
     }
