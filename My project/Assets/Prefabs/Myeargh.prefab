@@ -148,6 +148,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764f49b4c5a612c49a4b9136653dc721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mSounds:
+  - {fileID: 8300000, guid: d90c2730f21f940198eebe16f040c5a1, type: 3}
+  - {fileID: 8300000, guid: 20baca5e23316489ab38b4d411904c75, type: 3}
+  - {fileID: 8300000, guid: 9cde285f3993b4bf692dc303988d84a9, type: 3}
+  - {fileID: 8300000, guid: 2b9e7546e12d24f60906043ff00e5832, type: 3}
+  - {fileID: 8300000, guid: 5f5cc3920d1ce43beae7df8ec1260f0d, type: 3}
+  - {fileID: 8300000, guid: 66158ef51de604e9d92d5a8b7ffe90be, type: 3}
+  - {fileID: 8300000, guid: d038224c94517447f80ef6ccbed4ea63, type: 3}
+  - {fileID: 8300000, guid: 8ee665caaf89747dfbc17704c19c55b1, type: 3}
+  - {fileID: 8300000, guid: 2374bbacf80e744aa87563f5481ba203, type: 3}
+  - {fileID: 8300000, guid: 69f92653a27ee447eb15e6d0163a83d2, type: 3}
+  - {fileID: 8300000, guid: 60e953bf895d842b4af072ef723c2ada, type: 3}
+  - {fileID: 8300000, guid: 2fef9b539b97a4db694a2d620401b9ab, type: 3}
 --- !u!95 &-1216718047910338392
 Animator:
   serializedVersion: 5

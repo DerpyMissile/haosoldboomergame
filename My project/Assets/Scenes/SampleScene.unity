@@ -2849,10 +2849,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1654838366}
     m_Modifications:
-    - target: {fileID: 5182853782093589806, guid: fc485a9b8d6a88848a05db69ca1bdec8, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: c8eeb6a4819cf49d5930ded9ea541724, type: 3}
     - target: {fileID: 5862347753628114202, guid: fc485a9b8d6a88848a05db69ca1bdec8, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3733,17 +3729,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5243847240460380688, guid: b64647780fb2b8b4ba696c5fed29ee8a, type: 3}
-      propertyPath: rockSounds.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5243847240460380688, guid: b64647780fb2b8b4ba696c5fed29ee8a, type: 3}
-      propertyPath: rockSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: c8eeb6a4819cf49d5930ded9ea541724, type: 3}
-    - target: {fileID: 5243847240460380688, guid: b64647780fb2b8b4ba696c5fed29ee8a, type: 3}
       propertyPath: rockSounds.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 9b437cb2ad7a7436093e6898d46d80f6, type: 3}
+      objectReference: {fileID: 8300000, guid: c8eeb6a4819cf49d5930ded9ea541724, type: 3}
     - target: {fileID: 7392041950777245099, guid: b64647780fb2b8b4ba696c5fed29ee8a, type: 3}
       propertyPath: m_Name
       value: Dwayne

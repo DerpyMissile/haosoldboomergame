@@ -148,6 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07684b9cc0a5474aad8fdfa884d8528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rockSounds:
+  - {fileID: 8300000, guid: 9b437cb2ad7a7436093e6898d46d80f6, type: 3}
 --- !u!95 &2045236507430626293
 Animator:
   serializedVersion: 5

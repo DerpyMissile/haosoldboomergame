@@ -96,17 +96,17 @@ public class EnemyMovement : MonoBehaviour
 
     void moveEnemyD(ref GameObject dwayne){
         if(dwayne.GetComponent<Dwayne>().getStartingPos()){
-            dwayne.GetComponent<Rigidbody2D>().AddForce(transform.right);
+            dwayne.GetComponent<Rigidbody2D>().AddForce(transform.right*4);
         }else{
-            dwayne.GetComponent<Rigidbody2D>().AddForce(-transform.right);
+            dwayne.GetComponent<Rigidbody2D>().AddForce(-transform.right*4);
         }
     }
 
     void moveEnemyM(GameObject mmmm){
         if(mmmm.GetComponent<Myearg>().getStartingPos() == false){
-            mmmm.GetComponent<Rigidbody2D>().AddForce(transform.right*2);
+            mmmm.GetComponent<Rigidbody2D>().AddForce(transform.right*6);
         }else{
-            mmmm.GetComponent<Rigidbody2D>().AddForce(transform.right*-2);
+            mmmm.GetComponent<Rigidbody2D>().AddForce(transform.right*-6);
         }
     }
 
