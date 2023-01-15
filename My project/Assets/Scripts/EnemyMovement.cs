@@ -71,6 +71,11 @@ public class EnemyMovement : MonoBehaviour
             }
             Instantiate(whatEnemy, enemyPosNew, Quaternion.identity);
         }
+        if(PlayerStats.nextLevel){
+            yield return new WaitUntil(() => !PlayerStats.nextLevel);
+            howManySpawn = 1;
+            secondsTillSpawn = 2;
+        }
         StartCoroutine(SpawnEnemy());
     }
 

@@ -13,6 +13,8 @@ public class PlayerDeath : MonoBehaviour
     //heart 6 is (-5.25, --)
     //heart 7 is (-4.5, --)
     public Camera theCam;
+
+    public GameObject thePlayer;
     public GameObject blackScreenOfCertainDeath;
     public GameObject literallyEverythingElse;
     public TextMeshProUGUI deadText;
@@ -94,7 +96,7 @@ public class PlayerDeath : MonoBehaviour
         stage1.SetActive(false);
         stage2.SetActive(true);
         PlayerStats.nextLevel = false;
-        this.transform.position = new Vector3(0, 1, 0);
+        thePlayer.transform.position = new Vector3(0, 1, 0);
         StopCoroutine(firstDeath());
         prepareSecondStage();
     }
