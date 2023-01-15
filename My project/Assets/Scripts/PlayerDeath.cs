@@ -96,9 +96,33 @@ public class PlayerDeath : MonoBehaviour
         stage1.SetActive(false);
         stage2.SetActive(true);
         PlayerStats.nextLevel = false;
-        thePlayer.transform.position = new Vector3(0, 1, 0);
         StopCoroutine(firstDeath());
         prepareSecondStage();
+    }
+
+    IEnumerator secondDeath(){
+        yield return new WaitForSeconds(1);
+        while(theCam.orthographicSize <= 50){
+            theCam.orthographicSize+=4;
+            yield return new WaitForSeconds(1);
+        }
+        blackScreenOfCertainDeath.SetActive(true);
+        blackScreenOfCertainDeath.GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.6f);
+        literallyEverythingElse.GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.3f);
+        yield return new WaitForSeconds(1);
+        blackScreenOfCertainDeath.GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.3f);
+        literallyEverythingElse.GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.6f);
+        yield return new WaitForSeconds(1);
+        blackScreenOfCertainDeath.GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.6f);
+        literallyEverythingElse.GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.3f);
+        yield return new WaitForSeconds(1);
+        blackScreenOfCertainDeath.GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.3f);
+        literallyEverythingElse.GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.6f);
+        yield return new WaitForSeconds(1);
+        blackScreenOfCertainDeath.GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.7f);
+        literallyEverythingElse.GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.2f);
+        deadText.SetText("lmao loser");
+        Application.Quit();
     }
 
     void prepareSecondStage(){
@@ -110,16 +134,24 @@ public class PlayerDeath : MonoBehaviour
         hearts[0].transform.position = new Vector3(-9.0f, 4.665315f, 0);
         hearts[1].transform.position = new Vector3(-8.25f, 4.665315f, 0);
         hearts[2].transform.position = new Vector3(-7.5f, 4.665315f, 0);
+        thePlayer.transform.position = new Vector3(0, 5.0f, 10f);
+        blackScreenOfCertainDeath.SetActive(false);
+        PlayerStats.dieded = false;
     }
 
     void OnCollisionEnter2D(Collision2D collision){
         
         if(collision.gameObject.tag != "Platform"){
+            hearts = GameObject.FindGameObjectsWithTag("Heart");
             Debug.Log("ded");
             hearts[PlayerStats.lives].AddComponent<Rigidbody2D>();
-            if(PlayerStats.lives <= 0){
+            if(PlayerStats.lives <= 0 && !PlayerStats.dieded){
+                PlayerStats.dieded = true;
                 if(PlayerStats.howManyDeaths == 0){
                     StartCoroutine(firstDeath());
+                    PlayerStats.howManyDeaths++;
+                }else if(PlayerStats.howManyDeaths == 1){
+                    StartCoroutine(secondDeath());
                     PlayerStats.howManyDeaths++;
                 }
             }else{
