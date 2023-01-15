@@ -181,3 +181,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theCam: {fileID: 0}
+  blackScreenOfCertainDeath: {fileID: 0}
+  literallyEverythingElse: {fileID: 0}
+  deadText: {fileID: 0}
+  hearts: []
+  stage2heart1: {fileID: 0}
+  stage2heart2: {fileID: 0}
+  stage3heart1: {fileID: 0}
+  stage3heart2: {fileID: 0}
+  stage1: {fileID: 0}
+  stage2: {fileID: 0}
+  stage3: {fileID: 0}
