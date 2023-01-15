@@ -10,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] GameObject asterBoi;
     public GameObject[] enemiesD;
     public GameObject[] enemiesM;
-    float secondsTillSpawn = 5;
+    float secondsTillSpawn = 2;
     int howManySpawn = 1;
 
     IEnumerator SpawnEnemyCountdown(){
