@@ -8,6 +8,7 @@ TagManager:
   - EnemyMyeargh
   - Platform
   - EnemyAsteroid
+  - Heart
   layers:
   - Default
   - TransparentFX
