@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
+    public AudioClip[] asterSounds;
     public SpriteRenderer spriteRenderer;
     public Sprite newSprite;
     void ChangeSprite()
@@ -25,5 +26,11 @@ public class Asteroid : MonoBehaviour
             ChangeSprite();
             StartCoroutine(hi());
         }
+    }
+
+    void Start(){
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = asterSounds[(int)Mathf.Floor(Random.Range(0.0f, asterSounds.Length-1))];
+        audio.Play();
     }
 }

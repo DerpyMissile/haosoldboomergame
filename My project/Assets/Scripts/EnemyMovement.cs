@@ -10,9 +10,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] GameObject asterBoi;
     public GameObject[] enemiesD;
     public GameObject[] enemiesM;
-    public AudioSource audio;
     //this
-    public AudioClip[] otherClip;
     float secondsTillSpawn = 2;
     int howManySpawn = 1;
 
@@ -73,13 +71,7 @@ public class EnemyMovement : MonoBehaviour
                 }
             }
             //this
-            audio = GetComponent<AudioSource>();
             Instantiate(whatEnemy, enemyPosNew, Quaternion.identity);
-            if (whatEnemy == asterBoi) {
-                audio.clip = otherClip[0];
-                audio.Play();
-            }
-
         }
         if(PlayerStats.nextLevel){
             yield return new WaitUntil(() => !PlayerStats.nextLevel);
