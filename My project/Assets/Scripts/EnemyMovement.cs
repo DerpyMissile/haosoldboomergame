@@ -40,7 +40,7 @@ public class EnemyMovement : MonoBehaviour
                 }
             }else if(Random.Range(0.0f, 10.0f) <= 4.0f){
                 whatEnemy = asterBoi;
-                enemyPosNew = new Vector3(randomY, 10, 0);
+                enemyPosNew = new Vector3(randomY-2, 10, 0);
             }else if(Random.Range(0.0f, 10.0f) <= 6.0f){
                 whatEnemy = myearghBoi;
                 if(Random.Range(0.0f, 10.0f) <= 5.0f){
