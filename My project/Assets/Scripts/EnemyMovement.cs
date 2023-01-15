@@ -87,7 +87,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    void moveEnemyD(GameObject dwayne){
+    void moveEnemyD(ref GameObject dwayne){
         if(dwayne.GetComponent<Dwayne>().getStartingPos()){
             dwayne.GetComponent<Rigidbody2D>().AddForce(transform.right);
         }else{
@@ -114,7 +114,7 @@ public class EnemyMovement : MonoBehaviour
         enemiesD = GameObject.FindGameObjectsWithTag("EnemyDwayne");
         enemiesM = GameObject.FindGameObjectsWithTag("EnemyMyeargh");
         for(int i=1; i<enemiesD.Length; ++i){
-            moveEnemyD(enemiesD[i]);
+            moveEnemyD(ref enemiesD[i]);
         }
         for(int i=1; i<enemiesM.Length; ++i){
             moveEnemyM(enemiesM[i]);
