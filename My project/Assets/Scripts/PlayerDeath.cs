@@ -36,6 +36,7 @@ public class PlayerDeath : MonoBehaviour
         stage3heart1.SetActive(false);
         stage3heart2.SetActive(false);
         stage2.SetActive(false);
+        stage3.SetActive(false);
         hearts = GameObject.FindGameObjectsWithTag("Heart");
     }
 
@@ -84,6 +85,9 @@ public class PlayerDeath : MonoBehaviour
         deadText.SetText("And here; since I'm feeling generous and benevolent... HUZZAH! 2 MORE LIVES!");
         yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return));
+        deadText.SetText("---Insert coin to continue---");
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.W));
         deadText.SetText("...INSERTED THE COIN YET? OK GOOD! GREAT, EVEN! OI'VE MODIFIED THE GAME SO EVEN *PANSIES* LIKE YOU CAN COMPLETE IT! NOW SCRAM!");
         yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return));
@@ -122,6 +126,7 @@ public class PlayerDeath : MonoBehaviour
         blackScreenOfCertainDeath.GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.7f);
         literallyEverythingElse.GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.2f);
         deadText.SetText("lmao loser");
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return));
         Application.Quit();
     }
 
@@ -136,6 +141,7 @@ public class PlayerDeath : MonoBehaviour
         hearts[2].transform.position = new Vector3(-7.5f, 4.665315f, 0);
         thePlayer.GetComponent<Rigidbody2D>().velocity = new Vector3(0, -1, 0);
         thePlayer.transform.position = new Vector3(0, 5.0f, 10f);
+        deadText.SetText("You died!");
         blackScreenOfCertainDeath.SetActive(false);
         PlayerStats.dieded = false;
     }
