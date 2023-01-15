@@ -12,7 +12,7 @@ public class EnemyMovement : MonoBehaviour
     public GameObject[] enemiesM;
     public AudioSource audio;
     //this
-    public AudioClip otherClip[] = { Dwayne.wav };
+    public AudioClip[] otherClip = { "Rock.wav" };
     float secondsTillSpawn = 2;
     int howManySpawn = 1;
 
@@ -76,7 +76,7 @@ public class EnemyMovement : MonoBehaviour
             audio = GetComponent<AudioSource>();
             Instantiate(whatEnemy, enemyPosNew, Quaternion.identity);
             if (whatEnemy == asterBoi) {
-                audio.clip = otherClip;
+                audio.clip = otherClip[0];
                 audio.Play();
             }
 
